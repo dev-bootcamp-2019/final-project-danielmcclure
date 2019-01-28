@@ -9,7 +9,8 @@ Project Under Active Development until [Sunday 27th 23:59 AoE Time](https://www.
 
 **Goal**: Create an online marketplace that operates on the ethereum blockchain.
  
- 
+**Reality**: Project was delayed and ultimately time ran out whilst developing so I ask that you judge this project on it's merits within the peer review guidelines rather than having a 100% functioning project. Hopefully I can complete it after the fact. 
+
 ### User Stories:
 
 **An administrator opens the web app.** The web app reads the address and identifies that the user is an admin, showing them admin only functions, such as managing store owners. An admin adds an address to the list of approved store owners, so if the owner of that address logs into the app, they have access to the store owner functions.
