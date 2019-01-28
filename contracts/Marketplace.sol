@@ -136,7 +136,8 @@ contract Marketplace {
 		emit LogNewStore(msg.sender, _storeId, storeCount, true );
 		stores[storeCount] = Store({storeOwner: msg.sender, storeId: _storeId, storeBalance: 0, storeProductCount: 0});
 		//stores[storeCount].storeAdmins[0] = msg.sender;
-		storeCount = storeCount + 1;
+		// Use SafeMath Library from OpenZeppelin to update count
+		storeCount = SafeMath.add(storeCount, 1);
 		return true;
 	}
 
