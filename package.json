@@ -7,7 +7,8 @@
     "test": "test"
   },
   "scripts": {
-    "test": "test"
+    "test": "test",
+    "dev": "lite-server"
   },
   "repository": {
     "type": "git",
@@ -29,5 +30,8 @@
     "jquery": "^3.3.1",
     "popper.js": "^1.14.6",
     "web3": "^1.0.0-beta.39"
+  },
+  "devDependencies": {
+    "lite-server": "^2.4.0"
   }
 }

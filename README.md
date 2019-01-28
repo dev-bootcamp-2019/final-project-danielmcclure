@@ -27,6 +27,10 @@ Here are some suggestions for additional components that your project could incl
 
 ### Run a local development server
 
+To start a local development server run the following command:
+
+`npm run dev`
+
 ## Notes
 
 - Conforms to [Solidity Comments Style Guide](https://solidity.readthedocs.io/en/v0.4.21/layout-of-source-files.html#comments)
