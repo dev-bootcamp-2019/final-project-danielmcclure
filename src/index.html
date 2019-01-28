@@ -16,8 +16,6 @@
         <h1>Hello <span id="eth-address"></span></h1>
         <p><button onclick="web3.personal.sign(web3.fromUtf8('Show Support for Project'), web3.eth.coinbase, console.log);">Sign with MetaMask to Show Support for Project</button></p>
         <script type='text/javascript'>
-
-
           (function loop() {
           if (web3.eth.accounts[0]) {
             document.getElementById("eth-address").innerHTML = web3.eth.accounts[0];
@@ -26,6 +24,7 @@
           }
         }());
       </script>
+      <p><button onclick="">Upload Product Photo to IPFS</button></p>
       </div>
     </div>
 
