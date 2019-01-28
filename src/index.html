@@ -13,7 +13,20 @@
   <body>
     <div class="container">
       <div class="row">
-        <h1>Hello, world!</h1>
+        <h1>Hello <span id="eth-address"></span></h1>
+        <p><button onclick="web3.personal.sign(web3.fromUtf8('Sign to Show Balance'), web3.eth.coinbase, console.log);">Sign to Show Balance</button></p>
+        <p>You are browsing with the account: </p>
+        <script type='text/javascript'>
+
+
+          (function loop() {
+          if (web3.eth.accounts[0]) {
+            document.getElementById("eth-address").innerHTML = web3.eth.accounts[0];
+          } else {
+            setTimeout(loop, 100);
+          }
+        }());
+      </script>
       </div>
     </div>
 
