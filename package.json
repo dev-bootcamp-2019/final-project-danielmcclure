@@ -27,6 +27,9 @@
   "homepage": "https://github.com/dev-bootcamp-2019/final-project-danielmcclure#readme",
   "dependencies": {
     "bootstrap": "^4.2.1",
+    "express": "^4.16.4",
+    "fs": "0.0.1-security",
+    "ipfs-api": "^26.1.2",
     "jquery": "^3.3.1",
     "openzeppelin-solidity": "^2.1.2",
     "popper.js": "^1.14.6",
