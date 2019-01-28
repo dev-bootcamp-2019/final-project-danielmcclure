@@ -1,0 +1,33 @@
+{
+  "name": "simple-marketplace",
+  "version": "0.1.0",
+  "description": "A simple marketplace on the Ethereum blockchain.",
+  "main": "truffle-config.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dev-bootcamp-2019/final-project-danielmcclure.git"
+  },
+  "keywords": [
+    "Ethereum",
+    "eCommerce",
+    "Solidity"
+  ],
+  "author": "danielmcclure",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dev-bootcamp-2019/final-project-danielmcclure/issues"
+  },
+  "homepage": "https://github.com/dev-bootcamp-2019/final-project-danielmcclure#readme",
+  "dependencies": {
+    "bootstrap": "^4.2.1",
+    "jquery": "^3.3.1",
+    "popper.js": "^1.14.6",
+    "web3": "^1.0.0-beta.39"
+  }
+}
