@@ -1,5 +1,8 @@
 pragma solidity ^0.5.0;
 
+// Import SafeMath library for more secure mathematic functions
+import 'openzeppelin-solidity/contracts/math/SafeMath.sol';
+
 /** @title Marketplace */
 contract Marketplace {
 
