@@ -53,7 +53,7 @@ contract Marketplace {
 		address ownerAddress,
 		string storeId,
 		uint storeCount,
-		bool isActive
+		bool activeStore
 	);
 
 	event LogHasStore(
@@ -72,15 +72,27 @@ contract Marketplace {
 
 	// Event for new products
 	event LogListProduct(
-		
+		string productTitle,
+		uint productPrice,
+		uint productStock,
+		uint sku,
+		bool activeProduct
 	);
 
 	event LogRemoveProduct(
-		
+		string productTitle,
+		uint productPrice,
+		uint productStock,
+		uint sku,
+		bool activeProduct
 	);
 
 	event LogUpdateStock(
-		
+		string productTitle,
+		uint productPrice,
+		uint productStock,
+		uint sku,
+		bool activeProduct
 	);
 
 	event LogStoreWithdraw(
@@ -113,7 +125,7 @@ contract Marketplace {
 	// Create Product struct containing relevant variables
 	struct Product {
 		string productTitle;
-		string productPrice;
+		uint productPrice;
 		uint productStock;
 		uint sku;
 	}
@@ -155,7 +167,7 @@ contract Marketplace {
 	/// @return True Boolean for hasStore
 	/// Emit the LogHasStore event
 	*/
-	function setHasStore() private returns (bool){
+	function setHasStore() public returns (bool){
 		hasStore[msg.sender] = true;
 		emit LogHasStore(msg.sender, hasStore[msg.sender]);
 		return hasStore[msg.sender];
@@ -174,7 +186,13 @@ contract Marketplace {
 	}
 
 	/** Function to add product to store */
-	function listProduct() stopInEmergency public {
+	function listProduct(string memory productTitle, uint productPrice, uint productStock, uint sku) stopInEmergency public {
+		stores[storeCount].storeProductCount = SafeMath.add(stores[storeCount].storeProductCount, 1);
+		stores[storeCount].storeProducts[stores[storeCount].storeProductCount].productTitle = productTitle;
+		stores[storeCount].storeProducts[stores[storeCount].storeProductCount].productPrice = productPrice;
+		stores[storeCount].storeProducts[stores[storeCount].storeProductCount].productStock = productStock;
+		stores[storeCount].storeProducts[stores[storeCount].storeProductCount].sku = sku;
+		emit LogListProduct(productTitle, productPrice, productStock, sku, true);
 	}
 
 	/** Function to remove product from store */
