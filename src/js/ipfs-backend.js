@@ -1,3 +1,8 @@
+/*
+// IPFS Integration
+// Source: https://medium.com/coinmonks/ipfs-tutorial-sending-and-getting-files-via-nodejs-backend-85c85ae7f6f6
+*/
+
 //Required modules
 const ipfsAPI = require('ipfs-api');
 const express = require('express');
