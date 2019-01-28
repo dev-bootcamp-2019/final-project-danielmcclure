@@ -11,3 +11,7 @@ Where possible this contract aims to fail as early as possible and provide usefu
 ## 3. Restricting Access
 
 Another security feature of this smart contract is the fact that it restricts access to functions where possible through modifiers and other methods so that only those who are authorised to call a function can succeed. This is especially key for actions that impact the overall contract such as the circuit breaker but also for functions that impact individual stores on the marketplace. 
+
+## 4. Pull over Push Payments
+
+Payments have to be withdrawn from a store, rather than simply being pushed out by the smart contract. This pattern which is also known as the withdrawal pattern can help protect against reentrancy bugs.
