@@ -39,6 +39,10 @@ contract Marketplace {
 	*/
 	modifier stopInEmergency { if (!stopped) _; }
 
+
+	// Set hasStore mapping to allow contracts to see if an address has a store
+	mapping (address => bool) public hasStore;
+
 	/*
 		Add event logs for all store functions
 		TODO: Add Tests
@@ -50,6 +54,11 @@ contract Marketplace {
 		string storeId,
 		uint storeCount,
 		bool isActive
+	);
+
+	event LogHasStore(
+		address userAddress,
+		bool hasStore
 	);
 
 	// Event for store creation
@@ -138,7 +147,18 @@ contract Marketplace {
 		//stores[storeCount].storeAdmins[0] = msg.sender;
 		// Use SafeMath Library from OpenZeppelin to update count
 		storeCount = SafeMath.add(storeCount, 1);
+		setHasStore();
 		return true;
+	}
+
+	/** @notice Enroll a customer with the bank
+	/// @return True Boolean for hasStore
+	/// Emit the LogHasStore event
+	*/
+	function setHasStore() private returns (bool){
+		hasStore[msg.sender] = true;
+		emit LogHasStore(msg.sender, hasStore[msg.sender]);
+		return hasStore[msg.sender];
 	}
 
 	/*  Function to create admin for store */
