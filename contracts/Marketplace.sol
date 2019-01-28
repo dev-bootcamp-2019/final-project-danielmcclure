@@ -55,7 +55,7 @@ contract Marketplace {
 	// Create Store struct containing relevant variables
 	struct Store {
 		address payable storeOwner;
-		string storeId;
+		uint storeId;
 		uint storeBalance;
 		uint storeProductCount;
 		mapping (uint => Product) storeProducts;
@@ -73,15 +73,27 @@ contract Marketplace {
 	}
 
 	/*
+		Create modifiers for marketplace functions
+	*/
+
+	// Verify store owners for store admin functions
+	modifier verifyOwner (address _address) {require (msg.sender == owner); _;}
+
+	/*
 		Add store funtions
 	*/
 
 	/** Function create new store */
-	function newStore() public {
+	function newStore(uint storeId)
+	{
+		stores[storeId].
+
 	}
 
 	/** Function to create admin for store */
-	function addAdmin() public {
+	function addAdmin()
+	 verifyOwner(stores[storeId].storeOwner)
+	 public {
 	}
 
 	/** Function to remove admin for store */

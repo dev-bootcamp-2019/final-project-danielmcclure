@@ -3,9 +3,11 @@
 ## WARNING: 
 **This is development software as part of a training course and is not designed to be used in production code.**
 
+Project Under Active Development until [Sunday 27th 23:59 AoE Time](https://www.worldtimeserver.com/time-zones/aoe/).
+
 ## Project Description
 
-**Goal**: Create an online marketplace that operates on the blockchain.
+**Goal**: Create an online marketplace that operates on the ethereum blockchain.
  
  
 ### User Stories:
