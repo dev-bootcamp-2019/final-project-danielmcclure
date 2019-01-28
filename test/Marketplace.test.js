@@ -34,15 +34,15 @@ contract('Marketplace', function(accounts) {
 		await marketplace.addAdmin({from: alice});
 
 		// Check that bob has been added as an admin  to alice's store
-		const aliceAddAdmin = await marketplace.addAmin(alice, {from: alice});
+		// const aliceAddAdmin = await marketplace.addAdmin(alice, {from: alice});
 
 	});
 
 	it("remove store admin", async () => {
-		// Define deployed marketplace contract constant
+		// Check marketplace contract is deployed
 		const marketplace = await Marketplace.deployed();
 
-		await marketplace.removeAdmin({from: alice});
+		//await marketplace.removeAdmin({from: alice});
 	});
 
 	it("add product", async () => {

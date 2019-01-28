@@ -176,9 +176,9 @@ contract Marketplace {
 	}
 
 	/*  Function to create admin for store */
-	function addAdmin(address _storeAdmin)
+	function addAdmin()
 	 // Verify if store owner
-	 verifyStoreOwner(stores[storeCount].storeOwner)
+	 verifyStoreOwner(msg.sender)
 	 public {
 
 	}

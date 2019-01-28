@@ -6,4 +6,9 @@ import "../contracts/Marketplace.sol";
 
 contract TestMarketplace {
 
+	// The address of the Marketplace contract to be tested
+	Marketplace marketplace = Marketplace(DeployedAddresses.Marketplace());
+
+	// Main tests implemented in javascript `Marketplace.test.js
+
 }
