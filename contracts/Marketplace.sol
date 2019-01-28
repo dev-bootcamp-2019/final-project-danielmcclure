@@ -35,7 +35,6 @@ contract Marketplace {
 	 storeWithdraw
 	*/
 	modifier stopInEmergency { if (!stopped) _; }
-	modifier onlyInEmergency { if (stopped) _; }
 
 	/*
 		Add event logs for all store functions
