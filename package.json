@@ -28,6 +28,7 @@
   "dependencies": {
     "bootstrap": "^4.2.1",
     "jquery": "^3.3.1",
+    "openzeppelin-solidity": "^2.1.2",
     "popper.js": "^1.14.6",
     "truffle-assertions": "^0.7.2",
     "truffle-contract": "^4.0.2",
