@@ -44,6 +44,18 @@ To start a local development server run the following command:
 
 Then go to `http://localhost:3000` in your  browser.
 
-## Notes
+## Testing Methodology
+
+The Marketplace.sol contract implements a series of tests throughout the build process to ensure that the smart contract is functioning as expected and runs without bugs. 
+
+### Tests Included
+
+1. **Create New Store:** This has been designed to confirm that stores are created as expected. It runs checks to confirm that only the store owner creates stores when calling the `newStore` function and that other contract members such as the owner aren't classified as store owners by default.
+2. **Add Store Admin:** One of the intended functions of this contract is to allow a store owner to add additional admins to their store who can manage products and inevntory levels but not withdraw. This test is designed to chec that the only the owner can manage store admins and that the correct admin address is added when the `addAdmin` function is called.
+3. **Remove Store Admin:** This test is designed to check that admins are successfully removed when the `removeAdmin` function is called. This functionality can help to protect against comprimised store admin keys. 
+4. **Add Product:** This test is designed to ensure that store owners can successfully add products to their store and that the correct details are carried through to the product listins.
+5. **Remove Product:** This test is designed to ensure that products are succesfully removed when the `removeProduct` function is called by a store owner or admin. 
+
+## Other Notes
 
 - Conforms to [Solidity Comments Style Guide](https://solidity.readthedocs.io/en/v0.4.21/layout-of-source-files.html#comments)
