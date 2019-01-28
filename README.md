@@ -31,6 +31,8 @@ To start a local development server run the following command:
 
 `npm run dev`
 
+Then go to `http://localhost:3000` in your  browser.
+
 ## Notes
 
 - Conforms to [Solidity Comments Style Guide](https://solidity.readthedocs.io/en/v0.4.21/layout-of-source-files.html#comments)
