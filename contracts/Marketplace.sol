@@ -96,7 +96,9 @@ contract Marketplace {
 	);
 
 	event LogStoreWithdraw(
-		
+		address accountAddress,
+		uint withdrawAmount,
+		uint newStoreBalance
 	);
 
 	event LogStorePurchase(
@@ -186,7 +188,13 @@ contract Marketplace {
 	}
 
 	/** Function to add product to store */
-	function listProduct(string memory productTitle, uint productPrice, uint productStock, uint sku) stopInEmergency public {
+	function listProduct(string memory productTitle, uint productPrice, uint productStock, uint sku)
+	// Verify store owner for access control
+	verifyStoreOwner(msg.sender)
+	// Implement circuit breaker
+	stopInEmergency()
+	public {
+		// Product Listing Details
 		stores[storeCount].storeProductCount = SafeMath.add(stores[storeCount].storeProductCount, 1);
 		stores[storeCount].storeProducts[stores[storeCount].storeProductCount].productTitle = productTitle;
 		stores[storeCount].storeProducts[stores[storeCount].storeProductCount].productPrice = productPrice;
@@ -196,19 +204,37 @@ contract Marketplace {
 	}
 
 	/** Function to remove product from store */
-	function removeProduct() stopInEmergency public {
+	function removeProduct()
+	verifyStoreOwner(msg.sender)
+	stopInEmergency()
+	public {
+
 	}
 
 	/** Function to update product stock levels */
-	function updateStock() stopInEmergency public {
+	function updateStock()
+	verifyStoreOwner(msg.sender)
+	stopInEmergency()
+	public {
 	}
 
 	/** Function to withdraw balance from store contract */
-	function storeWithdraw() stopInEmergency public {
+	function storeWithdraw(uint withdrawAmount, string memory storeId)
+	stopInEmergency() 
+	public 
+	returns (uint) {
+		if (withdrawAmount <= stores[storeCount].storeBalance) {
+			/*//storeId.storeBalance = SafeMath.sub(withdrawAmount, storeId.storeBalance);
+			// Set value for testsing
+			storeId.storeBalance = 0;
+			emit LogStoreWithdraw(msg.sender, withdrawAmount, storeId.storeBalance);*/
+		}
 	}
 
 	/** Function to purchase product */
-	function storePurchase() stopInEmergency public {
+	function storePurchase() 
+	stopInEmergency() 
+	public {
 	}
 
 }
