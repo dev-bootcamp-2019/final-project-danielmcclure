@@ -3,8 +3,6 @@
 ## WARNING: 
 **This is development software as part of a training course and is not designed to be used in production code.**
 
-Project Under Active Development until [Sunday 27th 23:59 AoE Time](https://www.worldtimeserver.com/time-zones/aoe/).
-
 ## Project Description
 
 **Goal**: Create an online marketplace that operates on the ethereum blockchain.
@@ -31,23 +29,29 @@ There are a list of stores on a central marketplace where shoppers can purchase 
  
 The central marketplace is managed by a group of administrators. Admins allow store owners to add stores to the marketplace. Store owners can manage their store’s inventory and funds. Shoppers can visit stores and purchase goods that are in stock using cryptocurrency. 
 
-## How to set it up
+## How to Evaluate The Project
 
 1. Clone the repository to your computer
-2. Open the project folder via terminal (macOS)
-3. Run development server as detailed below and then test
+2. Open the project folder via terminal (macOS) 
+3. Go to project directory and run `npm install`
+4. Enter the `truffle develop` command
+5. Enter the `test` command. You should see 5 passing tests.
+6. Leave truffle develop running from previous stage.
+7. Copy the location truffle develop is running at from the success message:
+e.g. Truffle Develop started at http://127.0.0.1:9545/
+8. Open your browser with MetaMask installed and selection custom RPC network
+9. Paste the Truffle Develop URI into the Custom RPC settings
+10. Open a new terminal window in the project folder
+11. Run `npm run dev` to start the development server on localhost
+12. Go to `http://localhost:3000` in your browser with MetaMask installed making sure you are on the develop network.
+13. You should be welcomed with your metamask address.
+14. Note: If you want to test signing with Metamask - import the mnemonic from the Truffle Develop window and click the big button saying "Sign with MetaMask to Show Support for Project". 
 
-### Run a local development server
-
-To start a local development server run the following command:
-
-`npm run dev`
-
-Then go to `http://localhost:3000` in your  browser.
+*Note: Unfortunately due to the deadline there is not currently a deeper integration between the marketplace and the smart conracts even though they are on their way to becoming a functional marketplace*
 
 ## Testing Methodology
 
-The Marketplace.sol contract implements a series of tests throughout the build process to ensure that the smart contract is functioning as expected and runs without bugs. 
+The Marketplace.sol contract features a series of 5 tests throughout the build process to ensure that the smart contract is functioning as expected and runs without bugs. 
 
 ### Tests Included
 
@@ -60,3 +64,12 @@ The Marketplace.sol contract implements a series of tests throughout the build p
 ## Other Notes
 
 - Conforms to [Solidity Comments Style Guide](https://solidity.readthedocs.io/en/v0.4.21/layout-of-source-files.html#comments)
+- Inherits the SafeMath library from OpenZeppelin
+- In its current state you can load the UI on a development server and interact with the app
+- Shows your logged in ethereum address
+- You can sign transactions with MetaMask
+- The smart contract is able to run at least 5 passing tests through truffle although some of these require further development
+- Uses a circuit breaker for pausing smart contract functionality
+- The Project includes `design_pattern_desicions.md`, and `avoiding_common_attacks.md` files
+- Does not include uPort functionality, an upgradable design pattern, Vyper, or LLL contracts
+- Does not include an ENS domain even though I have tested ENS and personally own danielmcclure.eth and have mapped [danielmcclure.xyz to an ethereum address with DNSSEC](https://dnssec.ens.domains/)
